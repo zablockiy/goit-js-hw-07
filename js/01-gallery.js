@@ -3,19 +3,19 @@ import { galleryItems } from './gallery-items.js';
 
 // console.log(galleryItems);
 const imgGalleryEl = document.querySelector('.gallery');
-const markupGallery = createMakrUp(galleryItems);
+const markupGallery = createMarkUp(galleryItems);
 imgGalleryEl.innerHTML = markupGallery;
 imgGalleryEl.addEventListener('click', onClickImg);
 
-function createMakrUp(galleryItems) {
+function createMarkUp(galleryItems) {
     return galleryItems
-        .map((items) => {
+        .map((item) => {
             return `<div class ="gallery__item">
-        <a class="gallery__link" href="${items.original}">
+        <a class="gallery__link" href="${item.original}">
         <img class="gallery__image" 
-        src="${items.preview}"
-        data-source="${items.original}"
-        alt="${items.description}"/>
+        src="${item.preview}"
+        data-source="${item.original}"
+        alt="${item.description}"/>
         </a>
         </div>`
         }).join("");
